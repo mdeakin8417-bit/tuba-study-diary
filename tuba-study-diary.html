@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="bn"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>তুবার স্টাডি ডায়েরি</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&family=Amiri&display=swap">
+<style>
+:root{--bg:#faf6ea;--card:#fffdf6;--ink:#2b3a2f;--sage:#7a9a7e;--sage2:#e1ebdf;--lav:#ebe5f5;--lav2:#6d5f9a;--mut:#69736b;--line:#e6dfc8;--red:#b5483f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light dark}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a201b;--card:#242c25;--ink:#e8eee6;--sage:#8fb394;--sage2:#2e3b30;--lav:#2f2a40;--lav2:#b9aae6;--mut:#a3aea5;--line:#38433a;--red:#e07a70}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 'Hind Siliguri','Noto Sans Bengali','Amiri',system-ui,sans-serif;padding-bottom:84px}
+main{max-width:620px;margin:auto;padding:14px}
+h2,h3{margin:0 0 8px}h3{font-size:1.05rem}
+.card,.hero{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:14px;margin-bottom:12px;animation:in .3s ease}
+.hero{background:linear-gradient(135deg,var(--sage2),var(--lav))}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+small{display:block;color:var(--mut)}
+.it{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed var(--line)}.it:last-child{border:0}
+.it>div{flex:1;cursor:pointer}.it.dn b{text-decoration:line-through;opacity:.6}
+input[type=checkbox]{width:22px;height:22px;accent-color:var(--sage);margin-top:3px}
+.bar{height:10px;background:var(--sage2);border-radius:9px;overflow:hidden;margin:6px 0}.bar i{display:block;height:100%;background:var(--sage);transition:width .5s}
+.msg{color:var(--lav2);margin:6px 0 0}
+.qa{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+button{font:inherit;cursor:pointer}
+.qa button,.g{background:var(--lav);color:var(--ink);border:0;border-radius:14px;padding:10px 4px}
+.b{background:var(--sage);color:#fff;border:0;border-radius:14px;padding:11px 18px}
+.x{background:none;color:var(--red);border:1px solid var(--red);border-radius:14px;padding:10px 14px}
+.tabs{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}.tabs button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:20px;padding:5px 14px}.tabs .on{background:var(--sage);color:#fff;border-color:var(--sage)}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+input,select,textarea{width:100%;font:inherit;padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink)}
+textarea{font-family:inherit}label{display:block;margin-bottom:10px;color:var(--mut)}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);display:flex;padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px));z-index:5}
+nav button{flex:1;background:none;border:0;color:var(--mut);font-size:.78rem;line-height:1.3}nav button span{display:block;font-size:1.3rem}nav .on{color:var(--lav2);font-weight:600}
+#m{display:none;position:fixed;inset:0;background:#0007;z-index:9;align-items:flex-end;justify-content:center}#m.open{display:flex}
+.sh{background:var(--card);width:100%;max-width:620px;max-height:90%;overflow:auto;border-radius:22px 22px 0 0;padding:16px;padding-bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+.row{display:flex;gap:8px;flex-wrap:wrap}.er{color:var(--red);margin:0 0 8px}
+#t{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:var(--sage);color:#fff;padding:9px 18px;border-radius:20px;z-index:20;display:none;max-width:90%}#t.e{background:var(--red)}
+.empty{color:var(--mut);text-align:center;padding:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.grid .card{text-align:center;cursor:pointer;margin:0}
+.nt{border-left:4px solid var(--sage);padding-left:10px;margin-bottom:10px;cursor:pointer}.nt p{margin:2px 0;white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ar,[dir=auto]:lang(ar){font-family:'Amiri',serif}
+img.th{width:56px;height:56px;object-fit:cover;border-radius:10px;background:var(--lav)}
+#w{position:fixed;inset:0;z-index:30;background:var(--bg);overflow:auto;display:none;padding:20px}#w.open{display:block}
+#w .card{max-width:560px;margin:20px auto}.q{white-space:pre-line;font-size:1.08rem}
+</style></head><body>
+<main id="v"></main>
+<nav><button data-v="home" onclick="go('home')"><span>🏡</span>হোম</button><button data-v="routines" onclick="go('routines')"><span>🗓️</span>রুটিন</button><button data-v="notes" onclick="go('notes')"><span>📝</span>নোট</button><button data-v="hw" onclick="go('hw')"><span>📚</span>হোমওয়ার্ক</button><button data-v="more" onclick="go('more')"><span>✨</span>আরও</button></nav>
+<div id="m" onclick="cm()"></div><div id="t"></div>
+<div id="w"><div class="card"><h2 style="color:var(--lav2)">তুবার স্টাডি ডায়েরি</h2><small>তোমার পড়াশোনা, তোমার স্বপ্ন</small><p class="q">“তোমার প্রিয় শিক্ষক ইয়াকিন স্যারের পক্ষ থেকে তোমার জন্য রইল এই ক্ষুদ্র অথচ বিশেষ উপহার—‘তুবার স্টাডি ডায়েরি’; জ্ঞানার্জনের পথে তোমার প্রতিটি পদক্ষেপ হোক সুন্দর, সুশৃঙ্খল ও সাফল্যমণ্ডিত।”</p><p class="q">আসসালামু আলাইকুম, তুবা! 🌸
+
+জ্ঞান অর্জন করো, সুন্দর চরিত্র গড়ে তোলো এবং প্রতিদিন একটু একটু করে নিজের লক্ষ্যের দিকে এগিয়ে যাও। আল্লাহ তোমার ইলম ও আমলে বরকত দান করুন।</p><p><b>— ইয়াকিন স্যার</b></p><button class="b" style="width:100%" onclick="start()">আমার পড়াশোনা শুরু করি</button></div></div>
+<script>
+const $=s=>document.querySelector(s),bn=n=>String(n).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d]),uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ymd=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'),today=()=>ymd(new Date());
+const fmt=d=>d?new Date(d+'T00:00').toLocaleDateString('bn-BD',{weekday:'long',day:'numeric',month:'long',year:'numeric'}):'';
+const week=()=>{const d=new Date();d.setDate(d.getDate()-(d.getDay()+1)%7);return[...Array(7)].map((_,i)=>{const x=new Date(d);x.setDate(d.getDate()+i);return ymd(x)})};
+const pc=(a,b)=>b?Math.min(100,Math.round(a/b*100)):0,bar=p=>`<div class=bar><i style="width:${p}%"></i></div>`,empty=t=>`<div class=empty>${t}</div>`;
+const SUB0=['বাংলা','English','আরবি','আল-কুরআন','হাদিস','ফিকহ','ইসলামিক স্টাডিজ','গণিত','সাধারণ জ্ঞান'],CATS=['PDF','হাতের লেখা নোট','সিলেবাস','অন্যান্য'];
+let D={routines:[],notes:[],hw:[],exams:[],files:[],subs:[],goals:{d:3,w:15},welcomed:false},V='home',S={rf:'day',date:today(),q:'',sf:''},db,mem=false;
+const subs=()=>[...SUB0,...D.subs];
+const open=()=>new Promise((res,rej)=>{const r=indexedDB.open('tuba-diary',1);r.onupgradeneeded=()=>{r.result.createObjectStore('kv');r.result.createObjectStore('blobs')};r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});
+const tx=(st,m,fn)=>new Promise((res,rej)=>{const t=db.transaction(st,m),rq=fn(t.objectStore(st));t.oncomplete=()=>res(rq&&rq.result);t.onerror=t.onabort=()=>rej(t.error)});
+async function save(){try{await tx('kv','readwrite',s=>s.put(D,'data'));return true}catch(e){toast('সংরক্ষণ করা যায়নি। এই ব্রাউজারে স্থায়ী সংরক্ষণ কাজ করছে না।',1);return false}}
+function toast(m,e){const t=$('#t');t.textContent=m;t.className=e?'e':'';t.style.display='block';clearTimeout(t.h);t.h=setTimeout(()=>t.style.display='none',2800)}
+const cm=()=>{$('#m').className='';$('#m').innerHTML=''},er=m=>{$('#er').textContent=m};
+const CFG={
+routines:{n:'রুটিন',d:()=>({date:today(),start:'16:00',end:'17:00',subject:SUB0[0]}),f:()=>[{k:'subject',l:'বিষয়',t:'s',o:subs()},{k:'title',l:'কাজের শিরোনাম',r:1},{k:'date',l:'তারিখ',t:'date',r:1},{k:'start',l:'শুরুর সময়',t:'time',r:1},{k:'end',l:'শেষের সময়',t:'time',r:1},{k:'note',l:'অতিরিক্ত নির্দেশনা',t:'a'}],v:o=>o.end<=o.start?'শেষের সময় শুরুর পরে হতে হবে':''},
+notes:{n:'নোট',d:()=>({subject:S.sf||SUB0[0]}),f:()=>[{k:'subject',l:'বিষয়',t:'s',o:subs()},{k:'title',l:'শিরোনাম',r:1},{k:'body',l:'বিস্তারিত',t:'a',r:1}]},
+hw:{n:'হোমওয়ার্ক',d:()=>({subject:SUB0[0],due:today()}),f:()=>[{k:'subject',l:'বিষয়',t:'s',o:subs()},{k:'title',l:'শিরোনাম',r:1},{k:'body',l:'নির্দেশনা',t:'a'},{k:'due',l:'জমার তারিখ',t:'date',r:1}]},
+exams:{n:'পরীক্ষা',d:()=>({subject:SUB0[0]}),f:()=>[{k:'name',l:'পরীক্ষার নাম',r:1},{k:'subject',l:'বিষয়',t:'s',o:subs()},{k:'date',l:'তারিখ',t:'date',r:1}]},
+subs:{n:'নতুন বিষয়',d:()=>({}),f:()=>[{k:'name',l:'বিষয়ের নাম',r:1}]}};
+function edit(k,id){const c=CFG[k],v=id?D[k].find(x=>x.id==id):c.d();
+$('#m').innerHTML=`<div class=sh onclick=event.stopPropagation()><h3>${id?'সম্পাদনা':'নতুন'} · ${c.n}</h3><form onsubmit="return sv(event,'${k}','${id||''}')">${c.f().map(f=>`<label>${f.l}${f.r?' *':''}${f.t=='s'?`<select name=${f.k}>${f.o.map(o=>`<option ${o==v[f.k]?'selected':''}>${esc(o)}</option>`).join('')}</select>`:f.t=='a'?`<textarea name=${f.k} dir=auto rows=7>${esc(v[f.k])}</textarea>`:`<input name=${f.k} type=${f.t||'text'} dir=auto value="${esc(v[f.k])}">`}</label>`).join('')}<p id=er class=er></p><div class=row><button class=b>সংরক্ষণ করো</button><button type=button class=g onclick=cm()>বাতিল</button>${id?`<button type=button class=x onclick="d2(this,'${k}','${id}')">মুছো</button>`:''}</div></form></div>`;$('#m').className='open'}
+async function sv(e,k,id){e.preventDefault();const c=CFG[k],o=Object.fromEntries(new FormData(e.target));
+for(const f of c.f())if(f.r&&!String(o[f.k]||'').trim())return er(f.l+' লিখতে হবে'),false;
+const m=c.v&&c.v(o);if(m)return er(m),false;
+if(k=='subs'){const n=o.name.trim();if(subs().includes(n))return er('এই বিষয় আগেই আছে'),false;D.subs.push(n)}
+else if(id)Object.assign(D[k].find(x=>x.id==id),o);else D[k].push({id:uid(),done:false,at:Date.now(),topics:[],...o});
+if(await save()){cm();toast('সংরক্ষিত হয়েছে ✓');R()}return false}
+function d2(b,k,id){if(b.dataset.s){delItem(k,id)}else{b.dataset.s=1;b.textContent='নিশ্চিত? আবার চাপো'}}
+async function delItem(k,id){D[k]=D[k].filter(x=>x.id!=id);if(k=='files')try{await tx('blobs','readwrite',s=>s.delete(id))}catch{}if(await save()){cm();toast('মুছে ফেলা হয়েছে');R()}}
+async function tog(k,id){const x=D[k].find(x=>x.id==id);x.done=!x.done;await save();R()}
+async function tt(id,i){const t=D.exams.find(e=>e.id==id).topics[i];t.done=!t.done;await save();R()}
+async function dt(id,i){D.exams.find(e=>e.id==id).topics.splice(i,1);await save();R()}
+async function at(ev,id){ev.preventDefault();const t=ev.target.t.value.trim();if(!t)return toast('টপিকের নাম লিখতে হবে',1),false;D.exams.find(e=>e.id==id).topics.push({t,done:false});if(await save())R();return false}
+async function gs(ev){ev.preventDefault();const d=+ev.target.d.value,w=+ev.target.w.value;if(!(d>=1&&w>=1))return toast('লক্ষ্য কমপক্ষে ১ হতে হবে',1),false;D.goals={d,w};if(await save()){toast('লক্ষ্য সংরক্ষিত ✓');R()}return false}
+async function up(inp){const f=inp.files[0];if(!f)return;
+if(!/^(image\/|application\/pdf|text\/plain|application\/(msword|vnd\.openxmlformats))/.test(f.type))return inp.value='',toast('এই ধরনের ফাইল সমর্থিত নয় (PDF, ছবি, Word, টেক্সট চলবে)',1);
+if(f.size>15e6)return inp.value='',toast('ফাইল ১৫ MB-এর বেশি হতে পারবে না',1);
+const id=uid();try{await tx('blobs','readwrite',s=>s.put(f,id))}catch{inp.value='';return toast('ফাইল সংরক্ষণ ব্যর্থ হয়েছে',1)}
+D.files.push({id,name:f.name,type:f.type,size:f.size,cat:$('#fc').value,at:Date.now()});
+if(!await save()){D.files.pop();try{await tx('blobs','readwrite',s=>s.delete(id))}catch{}}else toast('ফাইল সংরক্ষিত ✓');R()}
+async function getF(id){return tx('blobs','readonly',s=>s.get(id))}
+async function openF(id,dl){try{const f=D.files.find(x=>x.id==id),b=await getF(id);if(!b)throw 0;const u=URL.createObjectURL(b);if(dl){const a=document.createElement('a');a.href=u;a.download=f.name;a.click();toast('ডাউনলোড শুরু হয়েছে (না হলে ব্রাউজার সেটিংস দেখো)')}else if(!window.open(u))toast('ফাইল খোলা যায়নি, ডাউনলোড চেষ্টা করো',1)}catch{toast('ফাইলটি পড়া যায়নি',1)}}
+const ct=(a,b)=>a.start>b.start?1:-1,cd=(a,b)=>a.date>b.date?1:-1;
+const ri=r=>`<div class="it ${r.done?'dn':''}"><input type=checkbox ${r.done?'checked':''} onchange="tog('routines','${r.id}')"><div onclick="edit('routines','${r.id}')"><b dir=auto>${esc(r.title)}</b><small>${esc(r.subject)} · ${bn(r.start)}–${bn(r.end)}</small>${r.note?`<small dir=auto>${esc(r.note)}</small>`:''}</div></div>`;
+const hi=h=>`<div class="it ${h.done?'dn':''}"><input type=checkbox ${h.done?'checked':''} onchange="tog('hw','${h.id}')"><div onclick="edit('hw','${h.id}')"><b dir=auto>${esc(h.title)}</b><small>${esc(h.subject)} · জমা: ${fmt(h.due)}${!h.done&&h.due<today()?' ⏰':''}</small>${h.body?`<small dir=auto>${esc(h.body)}</small>`:''}</div></div>`;
+const ni=n=>`<div class=nt onclick="edit('notes','${n.id}')"><b dir=auto>${esc(n.title)}</b><small>${esc(n.subject)}</small><p dir=auto>${esc(n.body)}</p></div>`;
+function ei(e){const t=e.topics||[],p=pc(t.filter(x=>x.done).length,t.length);return `<div class=card><div class=top><div><b dir=auto>${esc(e.name)}</b><small>${esc(e.subject)} · ${fmt(e.date)}</small></div><button class=g onclick="edit('exams','${e.id}')">✏️</button></div>${bar(p)}<small>${bn(t.filter(x=>x.done).length)}/${bn(t.length)} টপিক সম্পন্ন (${bn(p)}%)</small>${t.map((x,i)=>`<div class="it ${x.done?'dn':''}"><input type=checkbox ${x.done?'checked':''} onchange="tt('${e.id}',${i})"><div><b dir=auto>${esc(x.t)}</b></div><button class=g onclick="dt('${e.id}',${i})">✕</button></div>`).join('')}<form class=row onsubmit="return at(event,'${e.id}')" style="margin-top:8px"><input name=t dir=auto placeholder="নতুন সিলেবাস টপিক" style="flex:1"><button class=b>＋</button></form></div>`}
+function stats(){const t=today(),wk=week(),rt=D.routines,dd=rt.filter(r=>r.date==t&&r.done).length,wd=rt.filter(r=>wk.includes(r.date)&&r.done).length,hd=D.hw.filter(h=>h.done).length,tp=D.exams.flatMap(e=>e.topics||[]),td=tp.filter(x=>x.done).length;return{dd,wd,dp:pc(dd,D.goals.d),wp:pc(wd,D.goals.w),hd,hr:D.hw.length-hd,hp:pc(hd,D.hw.length),td,tr:tp.length-td,ep:pc(td,tp.length),rd:rt.filter(r=>r.done).length,rr:rt.filter(r=>!r.done).length}}
+const msg=p=>p>=100?'মাশাআল্লাহ! লক্ষ্য পূর্ণ হয়েছে 🌟':p>0?'দারুণ এগোচ্ছ, চালিয়ে যাও! 💪':'ছোট একটি কাজ দিয়ে শুরু করো — বিসমিল্লাহ 🌱';
+const VIEWS={
+home(){const t=today(),rs=D.routines.filter(r=>r.date==t).sort(ct),ph=D.hw.filter(h=>!h.done).sort((a,b)=>a.due>b.due?1:-1).slice(0,3),ex=D.exams.filter(e=>e.date>=t).sort(cd).slice(0,2),nn=[...D.notes].sort((a,b)=>b.at-a.at).slice(0,3),s=stats();
+return `<div class=hero><h2>আসসালামু আলাইকুম, তুবা! 🌸</h2><small>তুবার স্টাডি ডায়েরি · ${fmt(t)}</small></div>
+<div class=qa><button onclick="edit('notes')">📝 নোট</button><button onclick="edit('routines')">🗓️ রুটিন</button><button onclick="edit('hw')">📚 হোমওয়ার্ক</button></div>
+<div class=card><h3>লক্ষ্য ও অগ্রগতি</h3><small>আজ: ${bn(s.dd)}/${bn(D.goals.d)}</small>${bar(s.dp)}<small>এই সপ্তাহ: ${bn(s.wd)}/${bn(D.goals.w)}</small>${bar(s.wp)}<p class=msg>${msg(s.dp)}</p></div>
+<div class=card><h3>আজকের রুটিন</h3>${rs.map(ri).join('')||empty('আজ কোনো রুটিন যোগ করা হয়নি')}</div>
+<div class=card><h3>বাকি হোমওয়ার্ক</h3>${ph.map(hi).join('')||empty('কোনো বাকি হোমওয়ার্ক নেই 🎉')}</div>
+<div class=card><h3>আসন্ন পরীক্ষা</h3>${ex.map(e=>`<div class=it><div onclick="go('exams')"><b dir=auto>${esc(e.name)}</b><small>${esc(e.subject)} · ${fmt(e.date)}</small></div></div>`).join('')||empty('কোনো আসন্ন পরীক্ষা নেই')}</div>
+<div class=card><h3>সাম্প্রতিক নোট</h3>${nn.map(ni).join('')||empty('এখনো কোনো নোট সংরক্ষণ করা হয়নি')}</div>`},
+routines(){const wk=week();let l=D.routines.filter(r=>S.rf=='day'?r.date==S.date:S.rf=='week'?wk.includes(r.date):true).sort((a,b)=>a.date+a.start>b.date+b.start?1:-1),last='',h='';
+l.forEach(r=>{if(S.rf!='day'&&r.date!=last){last=r.date;h+=`<small style="margin-top:8px"><b>${fmt(r.date)}</b></small>`}h+=ri(r)});
+return `<div class=top><h2>🗓️ স্টাডি রুটিন</h2><button class=b onclick="edit('routines')">＋ নতুন</button></div><div class=tabs>${[['day','দিন'],['week','এই সপ্তাহ'],['all','সব']].map(([k,n])=>`<button class="${S.rf==k?'on':''}" onclick="S.rf='${k}';R()">${n}</button>`).join('')}</div>${S.rf=='day'?`<label>তারিখ<input type=date value="${S.date}" onchange="S.date=this.value||today();R()"></label>`:''}<div class=card>${h||empty('এই সময়ে কোনো রুটিন নেই')}</div>`},
+notes(){return `<div class=top><h2>📝 আমার নোট</h2><button class=b onclick="edit('notes')">＋ নতুন</button></div><input dir=auto placeholder="🔍 নোট খুঁজুন" value="${esc(S.q)}" oninput="S.q=this.value;$('#nl').innerHTML=nl()" style="margin-bottom:8px"><div class=row style="margin-bottom:10px"><select onchange="S.sf=this.value;$('#nl').innerHTML=nl()" style="flex:1"><option value="">সব বিষয়</option>${subs().map(s=>`<option ${s==S.sf?'selected':''}>${esc(s)}</option>`).join('')}</select><button class=g onclick="edit('subs')">＋ বিষয়</button></div><div class=card id=nl>${nl()}</div>`},
+hw(){const p=D.hw.filter(h=>!h.done).sort((a,b)=>a.due>b.due?1:-1),d=D.hw.filter(h=>h.done);return `<div class=top><h2>📚 হোমওয়ার্ক</h2><button class=b onclick="edit('hw')">＋ নতুন</button></div><div class=card><h3>বাকি (${bn(p.length)})</h3>${p.map(hi).join('')||empty('সব হোমওয়ার্ক শেষ! 🎉')}</div><div class=card><h3>সম্পন্ন (${bn(d.length)})</h3>${d.map(hi).join('')||empty('এখনো কিছু সম্পন্ন হয়নি')}</div>`},
+more(){return `<h2>✨ আরও</h2><div class=grid>${[['files','📁','স্টাডি ফাইল'],['exams','🎯','পরীক্ষার প্রস্তুতি'],['goals','🌱','লক্ষ্য ও অগ্রগতি'],['backup','💾','ব্যাকআপ'],['about','👤','ইয়াকিন স্যার']].map(([k,i,n])=>`<div class=card onclick="go('${k}')"><div style="font-size:1.8rem">${i}</div>${n}</div>`).join('')}</div><button class="g" style="width:100%;margin-top:12px;padding:10px" onclick="$('#w').className='open'">স্বাগত বার্তা আবার দেখো</button>`},
+files(){return `<h2>📁 স্টাডি ফাইল</h2><div class=card><label>ধরন<select id=fc>${CATS.map(c=>`<option>${c}</option>`).join('')}</select></label><input type=file accept="application/pdf,image/*,.doc,.docx,.txt" onchange="up(this)"><small>PDF, ছবি, Word বা টেক্সট · সর্বোচ্চ ১৫ MB · ফাইল শুধু এই ডিভাইসে থাকে</small></div><div class=card>${D.files.map(f=>`<div class=it>${f.type.startsWith('image/')?`<img class=th data-f="${f.id}" alt="">`:`<div class=th style="display:grid;place-items:center">📄</div>`}<div style="cursor:default"><b dir=auto>${esc(f.name)}</b><small>${f.cat} · ${bn((f.size/1024).toFixed(0))} KB</small><div class=row style="margin-top:4px"><button class=g onclick="openF('${f.id}')">খোলো</button><button class=g onclick="openF('${f.id}',1)">ডাউনলোড</button><button class=x onclick="d2(this,'files','${f.id}')">মুছো</button></div></div></div>`).join('')||empty('এখনো কোনো ফাইল সংরক্ষণ করা হয়নি')}</div>`},
+exams(){return `<div class=top><h2>🎯 পরীক্ষার প্রস্তুতি</h2><button class=b onclick="edit('exams')">＋ নতুন</button></div>${[...D.exams].sort(cd).map(ei).join('')||`<div class=card>${empty('এখনো কোনো পরীক্ষা যোগ করা হয়নি')}</div>`}`},
+goals(){const s=stats();return `<h2>🌱 লক্ষ্য ও অগ্রগতি</h2><div class=card><form class=row onsubmit="return gs(event)"><label style="flex:1">দৈনিক লক্ষ্য (কাজ)<input name=d type=number min=1 value="${D.goals.d}"></label><label style="flex:1">সাপ্তাহিক লক্ষ্য<input name=w type=number min=1 value="${D.goals.w}"></label><button class=b style="width:100%">লক্ষ্য সংরক্ষণ</button></form></div><div class=card><small>আজকের লক্ষ্য</small>${bar(s.dp)}<small>সাপ্তাহিক লক্ষ্য</small>${bar(s.wp)}<small>হোমওয়ার্ক: ${bn(s.hd)} সম্পন্ন, ${bn(s.hr)} বাকি</small>${bar(s.hp)}<small>পরীক্ষার প্রস্তুতি: ${bn(s.td)} টপিক সম্পন্ন, ${bn(s.tr)} বাকি</small>${bar(s.ep)}<small>রুটিনের কাজ: ${bn(s.rd)} সম্পন্ন, ${bn(s.rr)} বাকি</small><p class=msg>${msg(Math.max(s.dp,s.wp,s.hp,s.ep))}</p></div>`},
+backup(){return `<h2>💾 ব্যাকআপ</h2><div class=card><small>নোট, রুটিন, হোমওয়ার্ক, পরীক্ষা ও লক্ষ্য এখান থেকে সংরক্ষণ করা যায়। আপলোড করা ফাইল ব্যাকআপে যায় না।</small><textarea id=ex rows=5 readonly style="margin:8px 0">${esc(JSON.stringify({...D,files:[]}))}</textarea><div class=row><button class=g onclick="cp()">কপি করো</button><button class=g onclick="dlb()">ফাইল নামাও</button></div></div><div class=card><h3>ব্যাকআপ ফিরিয়ে আনো</h3><textarea id=im rows=4 placeholder="এখানে ব্যাকআপ টেক্সট পেস্ট করো" style="margin-bottom:8px"></textarea><div class=row><button class=b onclick="imp($('#im').value)">আমদানি</button><input type=file accept=".json,application/json" onchange="this.files[0]&&this.files[0].text().then(imp)"></div></div>`},
+about(){return `<h2>👤 ইয়াকিন স্যার</h2><div class=card><p class=q>“তুবার পড়াশোনাকে আরও সুন্দর, সুশৃঙ্খল ও আনন্দময় করে তোলার উদ্দেশ্যে তৈরি একটি শিক্ষামূলক উপহার।”</p></div><div class=card><h3>তথ্য কোথায় থাকে?</h3><small>সব তথ্য শুধু এই ফোনের ব্রাউজারে (IndexedDB) সংরক্ষিত হয়। অন্য ফোনে নিজে নিজে দেখা যাবে না — ব্যাকআপ ব্যবহার করো। ব্রাউজারের ডেটা মুছলে তথ্যও মুছে যেতে পারে।</small><h3 style="margin-top:10px">লগইন নেই</h3><small>অ্যাপে কোনো পাসওয়ার্ড নেই। তাই লিংক জনসমক্ষে প্রকাশ করা উচিত নয়; তুবার নোট ব্যক্তিগত রাখো।</small></div>`}};
+const nl=()=>{const q=S.q.trim().toLowerCase(),l=D.notes.filter(n=>(!S.sf||n.subject==S.sf)&&(!q||(n.title+n.body).toLowerCase().includes(q))).sort((a,b)=>b.at-a.at);return l.map(ni).join('')||empty(D.notes.length?'কোনো নোট মেলেনি':'এখনো কোনো নোট সংরক্ষণ করা হয়নি')};
+function cp(){const t=$('#ex');t.select();try{document.execCommand('copy');toast('কপি হয়েছে ✓')}catch{toast('কপি করা যায়নি, নিজে নির্বাচন করো',1)}}
+function dlb(){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([$('#ex').value],{type:'application/json'}));a.download='tuba-diary-backup.json';a.click();toast('না নামলে "কপি করো" ব্যবহার করো')}
+async function imp(txt){try{const o=JSON.parse(txt);if(!o||!Array.isArray(o.notes)||!Array.isArray(o.routines)||!Array.isArray(o.hw))throw 0;const keep=D.files;D={...D,...o,files:keep,welcomed:true};if(await save()){toast('আমদানি সম্পন্ন ✓');R()}}catch{toast('এটি সঠিক ব্যাকআপ নয়',1)}}
+function R(){$('#v').innerHTML=VIEWS[V]();const g=['files','exams','goals','about','backup'].includes(V)?'more':V;document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.v==g));
+document.querySelectorAll('img[data-f]').forEach(async i=>{try{const b=await getF(i.dataset.f);if(b)i.src=URL.createObjectURL(b)}catch{}})}
+const go=v=>{V=v;R();scrollTo(0,0)};
+async function start(){D.welcomed=true;await save();$('#w').className='';go('home')}
+(async()=>{try{db=await open();const s=await tx('kv','readonly',s=>s.get('data'));if(s)D={...D,...s}}catch(e){mem=true;toast('স্থায়ী সংরক্ষণ চালু নেই — তথ্য থাকবে না',1)}
+R();if(!D.welcomed)$('#w').className='open'})();
+</script></body></html>
